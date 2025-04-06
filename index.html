@@ -1,91 +1,25 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>蒸汽波 - 我的视频站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilibili 视频嵌入</title>
     <style>
         body {
-            font-family: "微软雅黑", sans-serif;
-            background-color: #000;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 宽高比 */
-            background: #000;
-        }
-        video {
-            width: 100%;
-            background: #000;
-        }
-        .bilibili-player {
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-        .controls {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
+            height: 100vh;
+            background-color: #f4f4f4;
         }
-        button {
-            background: rgba(255,255,255,0.8);
+        iframe {
+            width: 800px;
+            height: 450px;
             border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        button:hover {
-            opacity: 0.9;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 style="color: #fff; text-align: center; margin-bottom: 30px;">蒸汽波</h1>
-        <div class="video-wrapper bilibili-player">
-            <video id="myVideo" controls>
-                <source src="C:\Users\24958\PyCharmMiscProject\.venv\my project\videos/蒸汽波.mp4" type="video/mp4">
-                您的浏览器不支持 HTML5 视频标签
-            </video>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay()">▶ 播放/暂停</button>
-            <button onclick="toggleFullscreen()">🎧 全屏</button>
-        </div>
-    </div>
-
-    <script>
-        const video = document.getElementById('myVideo');
-
-        function togglePlay() {
-            video.paused ? video.play() : video.pause();
-        }
-
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                video.requestFullscreen().catch(err => {
-                    console.error(`切换全屏失败: ${err.message}`);
-                });
-            } else {
-                document.exitFullscreen();
-            }
-        }
-
-        // 进度条功能（示例）
-        video.addEventListener('timeupdate', () => {
-            const progress = (video.currentTime / video.duration * 100).toFixed(2);
-            console.log(`播放进度: ${progress}%`);
-        });
-    </script>
+    <iframe src="//player.bilibili.com/player.html?bvid=BV1JER6YsEGy&page=1" allowfullscreen></iframe>
 </body>
 </html>
