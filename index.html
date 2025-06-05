@@ -8,45 +8,20 @@
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .image-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            width: 100vw;
+            height: 100vh;
             overflow: hidden;
-            background-color: white;
+            background-color: #000;
         }
         img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: contain;
             display: block;
-        }
-        .title {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-            font-family: "Microsoft YaHei", sans-serif;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">词频统计图</h1>
-        <div class="image-container">
-            <img src="./images/毛线的新传专业搜索统计.png" alt="词频统计图">
-        </div>
-    </div>
+    <img src="./images/毛线的新传专业搜索统计.png" alt="词频统计图">
 </body>
 </html> 
